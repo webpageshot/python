@@ -1,0 +1,10 @@
+example.com
+example.dev
+example.io
+example.net
+example.org
+www.example.com
+www.example.dev
+www.example.io
+www.example.net
+www.example.org

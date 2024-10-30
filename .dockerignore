@@ -1,0 +1,24 @@
+# Version control
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.env
+
+# Development
+.vscode/
+*.log
+
+# Project specific
+img/
+!img/.gitkeep
+
+# System
+.DS_Store
+Thumbs.db

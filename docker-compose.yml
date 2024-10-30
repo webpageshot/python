@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./img:/app/img
+      - ./source.txt:/app/source.txt
+      - ./target.txt:/app/target.txt
+      - ./extensions.txt:/app/extensions.txt
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DISPLAY=:99
+      - MOZ_HEADLESS=1
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
